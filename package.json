@@ -1,0 +1,25 @@
+{
+  "name": "maxima-extension",
+  "displayName": "Maxima Extension",
+  "description": "Extension for Maxima, a Computer Algebra system",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.73.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "maxima",
+      "aliases": ["Maxima", "maxima"],
+      "extensions": [".mac",".max"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "maxima",
+      "scopeName": "source.maxima",
+      "path": "./syntaxes/maxima.tmLanguage.json"
+    }]
+  }
+}
