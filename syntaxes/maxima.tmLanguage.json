@@ -7,14 +7,40 @@
 		},
 		{
 			"include": "#strings"
+		},
+		{
+			"include": "#comment"
+		},
+		{
+			"include": "#constant"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#variables"
 		}
 	],
 	"repository": {
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.maxima",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "keyword.control.maxima",
+					"match": "\\b(do|while|unless|for|from|thru|step|next|in|if|then|else|elseif|return|go)\\b"
+				},
+				{
+					"name": "keyword.function.maxima",
+					"match": "\\b(define)\\b"
+				},
+				{
+					"name": "keyword.operator.maxima",
+					"match": "\\b(and|or|not)\\b"
+				},
+				{
+					"name": "keyword.module.maxima",
+					"match": "\\b(load)\\b"
+				}
+			]
 		},
 		"strings": {
 			"name": "string.quoted.double.maxima",
@@ -24,6 +50,52 @@
 				{
 					"name": "constant.character.escape.maxima",
 					"match": "\\\\."
+				}
+			]
+		},
+		"comment": {
+			"patterns": [
+				{
+					"name": "comment.block.maxima",
+					"begin": "/\\*",
+					"beginCaptures": {
+						"0": {"name": "comment.block.begin.maxima"}
+					},
+					"end": "\\*/",
+					"endCaptures": {
+						"0": {"name": "comment.block.end.maxima"}
+					},
+					"patterns": [
+						{"include": "#comment"}
+					]
+				}
+			]
+		},
+		"constant": {
+			"patterns": [
+				{
+					"name": "constant.numeric.maxima",
+					"match": "\\b([+-]?\\d+(\\.\\d*)?|\\.\\d+)([BbDdEeSs][+-]?\\d+)?\\b"
+				},
+				{
+					"name": "constant.language.maxima",
+					"match": "\\b(%e|%gamma|%i|%phi|%pi|true|false|inf|infinity|minf|ind|und|zeroa|zerob)\\b"
+				}
+			]
+		},
+		"functions": {
+			"patterns": [
+				{
+					"name": "function.language.maxima",
+					"match": "\\b[[:alnum:]]+\\b(?=\\s*\\()"
+				}
+			]
+		},
+		"variables": {
+			"patterns": [
+				{
+					"name": "variable.language.maxima",
+					"match": "\\b([[:alnum:]]+|%|%%|%[io]\\d+|_|__)\\b"
 				}
 			]
 		}
