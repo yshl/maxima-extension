@@ -17,7 +17,7 @@
     "languages": [{
       "id": "maxima",
       "aliases": ["Maxima", "maxima"],
-      "extensions": [".mac",".max"],
+      "extensions": [".mac",".max", ".wxm"],
       "configuration": "./language-configuration.json"
     }],
     "grammars": [{
