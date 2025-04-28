@@ -9,6 +9,7 @@
   "categories": [
     "Programming Languages"
   ],
+  "publisher": "OhtaYasuhiro",
   "repository": {
     "type": "git",
     "url": "https://github.com/yshl/maxima-extension.git"
