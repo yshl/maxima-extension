@@ -2,7 +2,7 @@
   "name": "maxima-extension",
   "displayName": "Maxima Extension",
   "description": "VSCode Extension for Maxima, a Computer Algebra system",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.73.0"
   },
